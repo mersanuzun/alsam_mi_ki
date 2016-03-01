@@ -8,7 +8,7 @@
 import scrapy
 
 
-class AlsammikiItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class Review(scrapy.Item):
+    subject = scrapy.Field()
+    text = scrapy.Field()
+    date = scrapy.Field()
