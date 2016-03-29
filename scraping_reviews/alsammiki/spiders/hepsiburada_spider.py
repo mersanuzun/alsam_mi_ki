@@ -28,7 +28,7 @@ class DmozSpider(scrapy.Spider):
         page_lis = response.xpath("//*[@id='pagination']/ul/li/a/text()").extract()
         for page in range(1, int(page_lis[-1]) + 1):
             yield scrapy.Request(base_url % page, callback=self.parse_page)
-            
+
     def parse_page(self, response):
         unicode(response.body.decode(response.encoding)).encode('utf-8')
         review = Review()
