@@ -1,0 +1,21 @@
+{{extend 'layout.html'}}
+
+{{block body}}
+  <div class="container" >
+  <div class="logo">
+    <img src="{{=URL('static', 'images/alsammiki_logo_trans.png')}}" class="img-responsive">
+  </div>
+  <div class="search_text">
+    <form action="{{=URL('default', 'comments')}}" method="GET">
+      <input type="text" name="link" id='link' class="form-control input-lg" placeholder="Product URL">
+      <span class="input-group-btn search_button">
+        <div>
+        <button class="btn btn-primary btn-md" id='search-button' type="submit">Search</button>
+        </div>
+      </span>
+    </form>
+    <div class="alert alert-danger" id='search-error'>
+    </div>
+  </div>
+</div>
+{{end block}}

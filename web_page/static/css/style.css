@@ -1,0 +1,54 @@
+body{
+	background-color: #F6F3EC
+}
+
+.container .search_text{
+	padding-top: 20px;
+  	
+	display: inline-block;
+}
+
+.container .row{
+
+	border: 1px solid;
+}
+.container .input-group{
+	border: 1px solid;
+}
+
+.logo {
+	margin: auto;
+    width: 30%;
+    margin-top: 10%;
+    padding: 10px;
+}
+
+.logo img{
+	width: 350px;
+	height: 100px;
+}
+
+.search_button div{
+	margin: auto;
+	width: 50%;
+	margin-top: 25px;	
+}
+.search_button button{
+	width: 100%;
+	height: 40px;
+}
+
+.search_text{
+    margin: auto;
+    width: 100%;        
+    padding: 10px;
+}
+
+#search-error{
+    margin-top: 10px;
+    text-align: center;
+    visibility: hidden;
+
+
+}
+

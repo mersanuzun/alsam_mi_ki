@@ -1,0 +1,69 @@
+body{
+	background-color: #F6F3EC;
+	height: 100%;
+	font-family: "Helvetica Narrow", sans-serif;
+}
+
+.top-background{
+	background-color: #74AFAD;
+	height: 55px;
+}
+
+.result-logo img{
+	width: 150px;
+}
+
+.result-logo{
+	width: 150px;
+	float: left;
+	margin-left: 10px
+}
+
+.top{
+	margin: auto;
+	width: 75%;
+	float: none;
+	padding-top: 10px;
+}
+
+.result-container {
+	width: 75%;
+	height: 500px;
+	margin: auto;
+
+}
+.pie-and-result{
+	margin-top: 10px;
+}
+.pie-chart{
+	border: 4px groove #D9853B;
+	width: 100%;
+	height: 300px;
+	margin-right:30px;
+}
+
+.comments {
+	margin-top: 10px;
+	border: 1px solid black;
+}
+
+.comments ul li {
+	background-color: #D8D8D8  ;
+	margin-top: 5px;
+	border: 1px solid #F6F6F6;
+	display: block;
+	font-size: 17px
+}
+.comment-group{
+	float: left
+}
+
+.actual-result{
+	padding: 8px;
+	text-align: center
+}
+
+.actual-result span{
+	font-weight: bold;
+}
+

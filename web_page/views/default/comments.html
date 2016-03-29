@@ -1,0 +1,86 @@
+{{extend 'layout.html'}}
+{{block body}}
+	<div class="top-background">
+		<div class="top" >
+			<div class="result-logo" class="img-responsive">
+				<a href="{{=URL('default', 'index')}}"><img src="{{=URL('static', 'images/alsammiki_logo_trans.png')}}"></a>
+			</div>
+			<div class="col-lg-10">
+			    <div class="input-group">
+			      <input type="text" class="form-control" placeholder="Product's comment link">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" type="button">Search</button>
+			      </span>
+			    </div><!-- /input-group -->
+			</div><!-- /.col-lg-6 -->
+		</div>
+	</div>
+	<div class="result-container">
+		<div class="pie-and-result">
+		<div class="pie-chart">
+			<div id="chartContainer" style="height: 100%; width: 100%;"></div>
+		</div>
+			<div class="actual-result">
+					<span>The most of people think that the product is good.</span>
+			</div>
+		</div>
+
+			<span class="product-name"> <h2><b>Pierre Cardin Monaco PC100691F03 Erkek Kol Saati </b></h2></span>
+			<ul class="list-group">
+				<li class="list-group-item">Ucuz ve kaliteli daha iyisini bulursaniz alın</li>
+				<li class="list-group-item">Fiyatı kalitesi çok başarılı. hepsi burada farkıyla herkese tavsiye ederim</li>
+				<li class="list-group-item">ürünü sipariş ettim ve 24 saatten daha kısa bir sürede elime ulaştı. Ayrıca resimdeki kadar şık ve %100 orjinal. Emeğinize sağlık....</li>
+				<li class="list-group-item">Çok başarılı mutlaka alın fiyat perfomrnas başarılı ama kolunuza da mutlaka takın o zaman hayran kalacaksınız</li>
+				<li class="list-group-item">Arkadaşlar saat aldıktan kısa bir süre sonra su geçirmeye başladı, bu fiyata su geçirmeyen bi sürü saat bulursunuz. Saat şık duruyor ama su gecirdigi icin Tavsiye etmiyorum</li>
+				<li class="list-group-item">Saat göründüğünden daha güzel fakat biraz büyük.Bileğiniz ince ise kolunuzda kaba durabilir. Çok şık bir duruşu var.Almak isteyenlere tavsiye ederim</li>
+				<li class="list-group-item">Ucuz ve kaliteli daha iyisini bulursaniz alın</li>
+				<li class="list-group-item">Fiyatı kalitesi çok başarılı. hepsi burada farkıyla herkese tavsiye ederim</li>
+				<li class="list-group-item">ürünü sipariş ettim ve 24 saatten daha kısa bir sürede elime ulaştı. Ayrıca resimdeki kadar şık ve %100 orjinal. Emeğinize sağlık....</li>
+				
+			</ul>
+		
+	</div>
+	<script type="text/javascript" src="{{=URL('static', 'js/libs/canvasjs.min.js')}}"></script>
+	
+
+	<script type="text/javascript">
+		window.onload = function () {
+			var ersan = {{=33}}
+			var chart = new CanvasJS.Chart("chartContainer",
+			{
+				title:{
+					text: "What other people think?",
+					fontFamily: "arial black"
+				},
+		                animationEnabled: true,
+				legend: {
+					verticalAlign: "bottom",
+					horizontalAlign: "center"
+				},
+				theme: "theme1",
+				data: [
+				{        
+					type: "pie",
+					indexLabelFontFamily: "Garamond",       
+					indexLabelFontSize: 20,
+					indexLabelFontWeight: "bold",
+					startAngle:0,
+					indexLabelFontColor: "MistyRose",       
+					indexLabelLineColor: "darkgrey", 
+					indexLabelPlacement: "inside", 
+					toolTipContent: "{name}: {y}hrs",
+					showInLegend: true,
+					indexLabel: "#percent%", 
+					dataPoints: [
+						{  y: ersan, name: "It's good.", legendMarkerType: "triangle"},
+						{  y: 33, name: "It's bad.", legendMarkerType: "square"},
+						{  y: 33, name: "It's so-so", legendMarkerType: "circle"}
+					]
+				}
+				]
+	});
+	chart.render();
+}
+
+	</script>
+{{end block}}
