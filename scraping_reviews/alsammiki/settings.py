@@ -13,7 +13,7 @@ BOT_NAME = 'alsammiki'
 
 SPIDER_MODULES = ['alsammiki.spiders']
 NEWSPIDER_MODULE = 'alsammiki.spiders'
-
+ITEM_PIPELINES = ['alsammiki.pipelines.ToJson']
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'alsammiki (+http://www.yourdomain.com)'
