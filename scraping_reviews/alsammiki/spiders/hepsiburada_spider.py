@@ -10,8 +10,8 @@ class DmozSpider(scrapy.Spider):
     start_urls = [
       #"http://www.hepsiburada.com/oral-b-vitality-sarj-edilebilir-dis-fircasi-cross-action-p-SGORAL043577-yorumlari"
         #"http://www.hepsiburada.com/lg-g4-32-gb-ithalatci-garantili-p-TELCEPLGG432GR-DS3-yorumlari"
-        "http://www.hepsiburada.com/prima-bebek-bezi-aktif-bebek-aylik-plus-paket-5-beden-p-ZYPYON7376120-yorumlari"
-        #"http://www.hepsiburada.com/sinbo-sbs-4427-dijital-baskul-p-SGSINBOSBS4427-yorumlari",
+        #"http://www.hepsiburada.com/prima-bebek-bezi-aktif-bebek-aylik-plus-paket-5-beden-p-ZYPYON7376120-yorumlari"
+        #"http://www.hepsiburada.com/sinbo-sbs-4427-dijital-baskul-p-SGSINBOSBS4427-yorumlari"
         #"http://www.hepsiburada.com/sandisk-32gb-microsd-48mb-s-class10-hafiza-karti-sdsqunb-032g-gn3mn-p-FTHFZSND32GMCG48-yorumlari",
         #"http://www.hepsiburada.com/delta-vinyl-altigen-koseli-ciftli-renkli-dambil-set-p-SPORDELTA1289-1X2-yorumlari",
         #"http://www.hepsiburada.com/delta-cok-fonksiyonlu-deluxe-kapi-barfiksi-mekik-sinav-cekme-aleti-ds-1325-p-SPORDELTA787-yorumlari",
@@ -19,12 +19,11 @@ class DmozSpider(scrapy.Spider):
         #"http://www.hepsiburada.com/altis-sd5000-trendy-m-2-5-hp-masajli-motorlu-mp3-calar-kosu-bandi-body-roller-hediye-p-SPORALTISSD5000-yorumlari",
         #"http://www.hepsiburada.com/arnica-bora-4000-2400-watt-su-filtreli-turbo-fircali-elektrikli-supurge-yesil-p-EVARNICABORA4000-yorumlari",
         #"http://www.hepsiburada.com/samsung-hm1500-bluetooth-kulaklik-cift-telefon-destegi-p-TELBKULSAMHM1500-yorumlari",
-        #"http://www.hepsiburada.com/logitech-m175-kablosuz-nano-mouse-910-002777-p-BD40120-yorumlari"
+        "http://www.hepsiburada.com/logitech-m175-kablosuz-nano-mouse-910-002777-p-BD40120-yorumlari"
     ]
 
     def parse(self, response):
-        base_url = "http://www.hepsiburada.com/prima-bebek-bezi-aktif-bebek-aylik-" \
-                   "plus-paket-5-beden-p-ZYPYON7376120-yorumlari?sayfa=%s"
+        base_url = "http://www.hepsiburada.com/logitech-m175-kablosuz-nano-mouse-910-002777-p-BD40120-yorumlari?sayfa=%s"
         page_lis = response.xpath("//*[@id='pagination']/ul/li/a/text()").extract()
         for page in range(1, int(page_lis[-1]) + 1):
             yield scrapy.Request(base_url % page, callback=self.parse_page)
@@ -46,7 +45,9 @@ class DmozSpider(scrapy.Spider):
             if len(text):
                 text = text[0]
                 text = text.replace("\n", "")
+                text = text.replace('"', ' ')
                 text = text.replace("\r", "")
+                text = text.replace(" .", ".")
                 review['text'] = text.strip().encode('utf8')
             else:
                 review['text'] = ""
